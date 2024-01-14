@@ -1,0 +1,153 @@
+/* Всплывающее меню поиска по городу */
+.weatherPanelCloseBox {
+    margin-top: 46px;
+    margin-right: 45px;
+  }
+  
+  .weatherPanelFindMenu {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bgr-primary);
+    transition: all ease 0.5s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .open {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bgr-primary);
+    transition: all ease 0.5s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* крестик */
+  .weatherPanelFindExit {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    margin-bottom: 46px;
+  }
+  .weatherPanelFindExit:before,
+  .weatherPanelFindExit:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-primary);
+    transform: rotate(45deg);
+  }
+  .weatherPanelFindExit:before {
+    transform: rotate(45deg);
+  }
+  .weatherPanelFindExit:after {
+    transform: rotate(-45deg);
+  }
+  
+  .weatherPanelSearchPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 22px;
+  }
+  
+  .weatherPanelFindCity {
+    height: 50px;
+    width: 192px;
+    padding-left: 55px;
+    background-color: transparent;
+    background-image: url(/public/assets/img/search.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    color:var(--common-gray);
+    text-align: left;
+    font-size: 18px;
+    border: 2px solid var(--common-gray);
+    border-radius: 10px;
+  }
+  
+  .weatherPanelFindCity::placeholder {
+    color:var(--common-gray);
+  }
+  
+  .weatherPanelFindButton {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 15px 20px 14px 20px;
+    color: var(--color-primary);
+    border: 2px solid var(--common-gray);
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  
+  
+  @media (min-width: 834px) and (max-width: 1439px) {
+
+    .weatherPanelFindMenu {
+      width: 329px;
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+    }
+    .weatherPanelCloseBox {
+      margin-top: 59px;
+    }
+  
+    .weatherPanelSearchPanel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+  
+      margin-left: 27px;
+      margin-right: 27px;
+    }
+  
+    .weatherPanelFindCity {
+      height: 50px;
+      max-width: 275px;
+      padding-left: 55px;
+    }
+  }
+  
+  @media (max-width: 833px) {
+    .weatherBar {
+      width: 100vw;
+      height: 667px;
+    }
+  
+    .weatherPanelCloseBox {
+      margin-top: 40px;
+      margin-right: 30px;
+    }
+  
+    .weatherPanelSearchPanel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+  
+      margin-left: 27px;
+      margin-right: 27px;
+    }
+  
+    .weatherPanelFindCity {
+      height: 50px;
+      width: 298px;
+      padding-left: 55px;
+    }
+  }
+  

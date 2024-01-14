@@ -1,0 +1,203 @@
+/* Основное меню - прогноз на неделю (день) */
+.weather-forecast {
+    margin-left: 74px;
+    margin-top: 42px;
+    margin-right: 54px;
+    margin-bottom: 38px;
+  }
+  
+  .weather-forecast_option {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  
+  .weather-forecast_header {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .weather-forecast_title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--color-primary);
+  
+    margin-left: 64px;
+  }
+  
+  .selected {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 9px;
+  
+    cursor: pointer;
+  }
+  
+  .not-selected {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--common-gray);
+    border-bottom: none;
+    padding-bottom: 0px;
+    cursor: pointer;
+  }
+  
+  .weather-forecast__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+  }
+  
+  .weather-forecast_week-block,
+  .weather-forecast_hour-block {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  
+  .weather-forecast-hide {
+    display: none;
+  }
+  
+  .weather-forecast_slider-right,
+  .weather-forecast_slider-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .weather-forecast_item {
+    height: 143px;
+    width: 100px;
+    flex-shrink: 0;
+  
+    background-position: center;
+    background-color: var(--bgr-primary);
+    border-radius: 8px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  
+    box-shadow: 0px 5px 15px 5px rgba(115, 113, 113, 0.2);
+  }
+  
+  .weather-forecast__card-img {
+    z-index: 1;
+  }
+  
+  .weather-forecast_item-day {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.59px;
+    color: var(--color-primary);
+    padding-top: 17px;
+    position: absolute;
+  }
+  
+  .weather-forecast__card-img {
+    margin-top: 24px;
+  }
+  
+  .weather-forecast_item-temp {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 112px;
+  }
+  
+  .weather-forecast_item-temp-daily,
+  .weather-forecast_item-temp-current {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-primary);
+    line-height: normal;
+
+  }
+  
+  .weather-forecast_item-temp-current {
+    padding-bottom: 14px;
+  }
+  
+  .weather-forecast_item-temp-night {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.59px;
+    color: var(--color-night);
+    margin-left: 18px;
+  }
+  
+  @media (min-width: 1440px) {
+    .weather-forecast_item:nth-child(n + 7) {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 834px) and (max-width: 1439px) {
+    .weather-forecast_title {
+      margin-left: 60px;
+    }
+  
+    .weather-forecast_item:nth-child(n + 4) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 833px) {
+    .weather-forecast_header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .weather-forecast_title {
+      margin-left: 0px;
+    }
+  
+    .weather-forecast_option {
+      display: flex;
+      flex-direction: row;
+      gap: 55px;
+    }
+  
+    .weather-forecast_slider-right,
+    .weather-forecast_slider-left {
+      display: none;
+    }
+  
+    .weather-forecast_week-block,
+    .weather-forecast_hour-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .weather-forecast-hide {
+      display: none;
+    }
+  
+    .weather-forecast_item {
+      grid-column: span 1;
+    }
+  
+    .day-7,
+    .hour-plus-7,
+    .hour-plus-8,
+    .hour-plus-9,
+    .hour-plus-10,
+    .hour-plus-11,
+    .hour-plus-12 {
+      display: flex;
+    }
+  }

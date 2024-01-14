@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
+import { Main } from './components/Main/Main'
+import { SideBar } from './components/SideBar/SideBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+	const [theme, setTheme] = useState('dark')
+	const [switchBtnTheme, setSwitchBtnTheme] = useState(true)
+
+	const toggleTheme = () => {
+		setSwitchBtnTheme(!switchBtnTheme)
+
+		if (theme === 'light') {
+			setTheme('dark')
+		} else {
+			setTheme('light')
+		}
+	}
+
+	useEffect(() => {
+		if (theme === 'light') {
+			document.body.setAttribute('data-theme', 'dark')
+		} else {
+			document.body.setAttribute('data-theme', 'light')
+		}
+	}, [theme])
+
+	return (
+		<div className='app'>
+			<SideBar handleClick={toggleTheme} switchBtnTheme={switchBtnTheme} />
+			<Main />
+		</div>
+	)
 }
-
-export default App;
